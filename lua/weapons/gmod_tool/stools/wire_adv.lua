@@ -122,7 +122,7 @@ if SERVER then
 		if not tool then return end
 		
 		local material = tool:GetClientInfo("material")
-		local width    = tool:GetClientNumber("width")
+		local width    = math.Clamp(tool:GetClientNumber("width"),0,10)
 		local color    = Color(tool:GetClientNumber("r"), tool:GetClientNumber("g"), tool:GetClientNumber("b"))
 		
 		local uid = ply:UniqueID()
